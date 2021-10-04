@@ -1,0 +1,17 @@
+header {
+    width: 31em;
+    height: 10em;
+    background: rgba(172, 171, 171, 0.335);
+    margin: 0 auto;
+    margin-top: 1.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5em;
+}
+
+.header-time{
+    color: rgb(255, 255, 255);
+    font-size: 2.5em;
+    font-weight: 600;
+}
