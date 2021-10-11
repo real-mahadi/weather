@@ -7,22 +7,23 @@ import night from './../images/night.jpg';
 
 /**
 * convert 24hour clock time to 12 hour clock
+* @param hour @param minute 
 * @returns a string that contains time in 12 hour format
 */
-export function clock12Hour() {
-    const current = currentTime();
-    const currentHour = current[0];
-    const currentMinute = current[1];
+export function clock12Hour(hour = currentTime()[0], minute = currentTime()[1]) {
+    if (minute < 10) {
+        minute = `0${minute}`;
+    }
 
     let time12Hour;
-    if (currentHour > 12) {
-        time12Hour = `${currentHour - 12}:${currentMinute} PM`
+    if (hour > 12) {
+        time12Hour = `${hour - 12}:${minute} PM`
     }
-    else if (currentHour === 0) {
-        time12Hour = `12:${currentMinute} AM`
+    else if (hour === 0) {
+        time12Hour = `12:${minute} AM`
     }
     else {
-        time12Hour = `${currentHour}:${currentMinute} AM`
+        time12Hour = `${hour}:${minute} AM`
     }
 
     return time12Hour;
@@ -30,19 +31,17 @@ export function clock12Hour() {
 
 
 /**
-* depending on current time this function find out
-* which part of the day is now.  
-* @returns (morning, afternoon) etc
-*/
-export function dayCycleOnTime() {
-    const current = currentTime();
-    const currentHour = current[0];
-
+ * depending on hour parameter this function 
+ * will decide which part of the day is.
+ * @param {int} hour
+ * @returns (morning, afternoon) etc
+ */
+export function dayCycleOnTime(hour = currentTime()[0]) {
     let dayPart;
-    if (currentHour > 6 && currentHour <= 12) dayPart = 'Morning'
-    else if (currentHour > 12 && currentHour <= 16) dayPart = 'Noon'
-    else if (currentHour > 16 && currentHour <= 18) dayPart = 'Afternoon'
-    else if (currentHour > 18 && currentHour <= 19) dayPart = 'Evening'
+    if (hour > 6 && hour <= 12) dayPart = 'Morning'
+    else if (hour > 12 && hour <= 16) dayPart = 'Noon'
+    else if (hour > 16 && hour <= 18) dayPart = 'Afternoon'
+    else if (hour > 18 && hour <= 19) dayPart = 'Evening'
     else {
         dayPart = 'Night 🌛'
     }
@@ -55,9 +54,7 @@ export function dayCycleOnTime() {
  * @returns image depending on time such as return morning image
  * if it's morning time
  */
-export function imageOnDayTime() {
-    let dayPeriod = dayCycleOnTime();
-
+export function imageOnDayTime(dayPeriod = dayCycleOnTime()) {
     let image;
     switch (dayPeriod) {
         case 'Morning':

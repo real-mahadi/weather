@@ -7,18 +7,9 @@
 }
 
 input {
+    background: rgba(255, 255, 255, 0.959);
     font-size: xx-large;
-    border-radius: 0.5em;
-    padding-left: 10px;
-}
-
-button {
-    font-size: x-large;
-    border-radius: 10px;
-    font-weight: 600;
-    padding: 10px;
-}
-
-button:hover {
-    box-shadow: 3px 5px #eede00;
+    border-radius: 25px 5px;
+    padding: 5px 15px 5px 15px;
+    border: none;
 }

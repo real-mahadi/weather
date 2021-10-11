@@ -1,7 +1,7 @@
 header {
     width: 31em;
     height: 10em;
-    background: rgba(172, 171, 171, 0.335);
+    background: rgba(49, 49, 49, 0.383);
     margin: 0 auto;
     margin-top: 1.9em;
     display: flex;
@@ -10,8 +10,8 @@ header {
     border-radius: 1.5em;
 }
 
-.header-time{
-    color: rgb(255, 255, 255);
+.header-time {
+    color: rgb(250, 246, 246);
     font-size: 2.5em;
     font-weight: 600;
 }
