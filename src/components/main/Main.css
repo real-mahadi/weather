@@ -10,6 +10,6 @@ input {
     background: rgba(255, 255, 255, 0.959);
     font-size: xx-large;
     border-radius: 25px 5px;
-    padding: 5px 15px 5px 15px;
+    padding: 5px 15px;
     border: none;
 }
