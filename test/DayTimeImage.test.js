@@ -1,5 +1,5 @@
-const check12HourClock = require('./../src/logic/DayTimeImage/clock12Hour')
+const check = require('./../src/logic/DayTimeImage')
 
 test('send right time format', () => {
-    expect(check12HourClock(16,32)).toBe('4:32 PM')
+    expect(check.clock12Hour(16,32)).toBe('4:32 PM')
 })
